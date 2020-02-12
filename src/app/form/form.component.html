@@ -1,0 +1,134 @@
+<app-loader *ngIf="loaded"></app-loader>
+<div>We are on page {{formSelector}}</div>
+<!-- The form for population -->
+<div *ngIf=" formSelector !== 'expectancy'" class="clrweb-DoxMedia-block clr-col-md-6" style="padding-top: 0">
+  <div layout="vertical" _nghost-clarity-c3="">
+    <h3>World Population</h3>
+    <form  [formGroup]="populationForm" (ngSubmit)="onSubmit()" class="clr-form clr-form-vertical">
+<!--Country selector  -->
+      <div  class="clr-form-control">
+        <label  class="clr-control-label" for="country">Country</label>
+        <div  class="clr-control-container">
+          <div  class="clr-select-wrapper">
+            <select
+            class="select_app"
+            placeholder="country"
+            id="country"
+            formControlName="country">
+              <option
+              *ngFor="let county of countries"
+              [ngValue]="county" >{{county}}</option>
+
+            </select>
+          </div>
+        </div>
+      </div>
+<!--Year selector  -->
+      <div  class="clr-form-control">
+        <label  class="clr-control-label" for="year">Year</label>
+        <div  class="clr-control-container">
+          <div  class="clr-select-wrapper">
+            <select
+            class="select_app"
+            placeholder="year"
+            id="year"
+            formControlName="year">
+              <option
+              *ngFor="let year of years"
+              [ngValue]="year">{{year}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+<!--Age from selector  -->
+      <div  class="clr-form-control">
+        <label  class="clr-control-label" for="ageFrom">From Age</label>
+        <div  class="clr-control-container">
+          <div  class="clr-input-wrapper">
+            <input
+             class="clr-input select_app"
+             placeholder="0"
+             type="number"
+             id="ageFrom"
+             formControlName="ageFrom">
+          </div>
+          <span  class="clr-subtext">(the age from which to generate, min 0)</span>
+        </div>
+      </div>
+<!--Age to selector  -->
+      <div  class="clr-form-control">
+        <label  class="clr-control-label" for="ageTo">To Age</label>
+        <div  class="clr-control-container">
+          <div  class="clr-input-wrapper">
+            <input
+            class="clr-input select_app"
+            placeholder="100"
+            type="number"
+            id="ageTo"
+            formControlName="ageTo">
+          </div>
+          <span  class="clr-subtext">(the age to which to generate, max 100)</span>
+        </div>
+      </div>
+      <div class="button">
+        <button class="btn btn-success-outline" type="submit" [disabled]="!populationForm.valid">Get data</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- life expectancy -->
+<div  *ngIf=" formSelector === 'expectancy'" class="clrweb-DoxMedia-block clr-col-md-6" style="padding-top: 0">
+  <div layout="vertical" _nghost-clarity-c3="">
+    <h3>Life expectancy.</h3>
+    <form [formGroup]="lifeExpectancyForm" (ngSubmit)="onSubmit()"  class="clr-form clr-form-vertical">
+       <!--Gender selector  -->
+       <div class="clr-form-control">
+        <label  class="clr-control-label" for="gender">Gender</label>
+        <div  class="clr-control-container">
+          <div  class="clr-radio-wrapper">
+            <div  *ngFor="let gender of genders" >
+              <input type="radio" clrRadio value="gender" name="gender" [value]="gender" formControlName="gender"/>
+              <label>{{gender}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Country selector  -->
+      <div  class="clr-form-control">
+        <label  class="clr-control-label" for="country">Country</label>
+        <div  class="clr-control-container">
+          <div  class="clr-select-wrapper">
+            <select
+            class="select_app"
+            placeholder="country"
+            id="country"
+            formControlName="country">
+              <option
+              *ngFor="let county of countries"
+              [ngValue]="county" >{{county}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!--your age  -->
+      <div  class="clr-form-control">
+        <label  class="clr-control-label" for="ageFrom">Age</label>
+        <div  class="clr-control-container">
+          <div  class="clr-input-wrapper">
+            <input
+             class="clr-input select_app"
+             type="number"
+             id="age"
+             formControlName="age">
+          </div>
+          <span  class="clr-subtext">(your age, max 100 years)</span>
+        </div>
+      </div>
+
+      <div class="button">
+        <button class="btn btn-success-outline" type="submit" [disabled]="!lifeExpectancyForm.valid">Get data</button>
+      </div>
+  </form>
+</div>
+</div>

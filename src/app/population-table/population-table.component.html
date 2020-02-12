@@ -1,0 +1,21 @@
+<div *ngIf="this.populationReturnArray.length > 0">
+  <h3>{{currentCountry}} population in year {{currentYear}}</h3>
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Age</th>
+            <th>Females</th>
+            <th>Males</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let population of populationReturnArray">
+            <td>{{population.age}}</td>
+            <td>{{population.females}}</td>
+            <td>{{population.males}}</td>
+            <td>{{population.total}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

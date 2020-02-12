@@ -1,0 +1,14 @@
+<div class="bg_img">
+  <div class="text" [@paragraphState]="state">
+    <p>
+      Age is just a number, not a state of mind or a reason for any type of
+      particular behavior.
+    </p>
+    <p *ngIf="lifeExpectancy">
+      You still have<span style="color:  rgb(123, 106, 248);">{{
+        lifeExpectancy
+      }}</span>
+      years left, spent it wisely.
+    </p>
+  </div>
+</div>

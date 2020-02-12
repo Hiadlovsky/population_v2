@@ -1,0 +1,27 @@
+<clr-main-container class="main-container">
+  <app-header></app-header>
+<div class="content-container">
+  <main class="content-area">
+    <div class="app__body">
+      <div class="clr-row">
+        <div class="clr-col-lg-4">
+          <div class="card">
+            <div class="card-block">
+          <!-- <app-loader></app-loader> -->
+           <app-form></app-form>
+            </div>
+           </div>
+        </div>
+        <div class="clr-col-lg-8">
+          <router-outlet></router-outlet>
+       </div>
+    </div>
+    </div>
+
+  </main>
+</div>
+<div class="clr-footer " style="background-color: rgba(46, 46, 46, 0.719);" >
+  <app-footer></app-footer>
+</div>
+
+</clr-main-container>

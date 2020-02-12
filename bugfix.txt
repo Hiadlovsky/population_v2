@@ -1,0 +1,7 @@
+starts at 0. -- fixed
+validation - age from 0 to 100 --fixed
+           - start must be less then end --fixed
+           - work with just start value --fixed
+
+
+

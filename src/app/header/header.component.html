@@ -1,0 +1,27 @@
+<clr-header style="background-color: rgba(46, 46, 46, 0.719);" >
+  <div class="branding">
+   <a href="#" class="nav-link">
+    <clr-icon shape="atom"></clr-icon>
+    <span class="title">Population</span>
+   </a>
+  </div>
+    <div class="header-nav" [clr-nav-level]="1">
+      <a routerLink="table" routerLinkActive="active" class="nav-link"><span class="nav-text">Tables</span></a>
+      <a routerLink="chart" routerLinkActive="active" class="nav-link"><span class="nav-text">Charts</span></a>
+      <a routerLink="expectancy" routerLinkActive="active" class="nav-link"><span class="nav-text">Life Expectancy</span></a>
+    </div>
+    <div class="header-actions">
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger aria-label="toggle settings menu">
+                <clr-icon shape="cog"></clr-icon>
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a clrDropdownItem>Save</a>
+                <a clrDropdownItem>Get</a>
+                <a clrDropdownItem>Log in</a>
+                <a clrDropdownItem>Log out</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+  </clr-header>

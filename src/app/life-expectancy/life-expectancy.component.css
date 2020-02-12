@@ -1,0 +1,34 @@
+.bg_img{
+  background-image: url('https://p1.pxfuel.com/preview/498/361/295/leaf-autumn-tree-natural.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 94.5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  border-radius: 2%;
+
+  margin-top: 25px;
+}
+
+.bg_img p {
+  color: beige;
+  font-family: 'Long Cang', cursive;
+  font-size: 400%;
+  line-height: 100%;
+}
+
+
+.bg_img p:first-child::before {
+  font-family: 'Long Cang', cursive;
+  content: '"';
+  color: rgb(123, 106, 248);
+}
+
+.bg_img p:first-child::after {
+  font-family: 'Long Cang', cursive;
+  content: '"';
+  color: rgb(123, 106, 248);
+}
